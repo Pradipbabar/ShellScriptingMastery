@@ -1,36 +1,44 @@
-#!/bin/bash
+# PowerShell Scripting Basics
 
-# Introduction to Shell Scripting
+# Introduction to Variables and Data Types
+$firstName = "John"
+$age = 30
+$height = 5.9
+$isStudent = $true
 
-# Bash Scripting Basics
-echo "Hello, this is a simple Bash script!"
+# Displaying Variables
+Write-Host "Name: $firstName"
+Write-Host "Age: $age"
+Write-Host "Height: $height feet"
+Write-Host "Is Student: $isStudent"
 
-# Variables and Data Types
-name="John"
-age=25
+# Fundamental Control Structures
 
-echo "My name is $name and I am $age years old."
+# If-Else Statement
+if ($age -lt 18) {
+    Write-Host "You are a minor."
+} else {
+    Write-Host "You are an adult."
+}
 
-# Basic Control Structures
+# For Loop
+Write-Host "Counting from 1 to 5:"
+for ($i = 1; $i -le 5; $i++) {
+    Write-Host $i
+}
 
-# Conditional Statements
-if [ $age -ge 18 ]; then
-  echo "I am an adult."
-else
-  echo "I am a minor."
-fi
+# While Loop
+$counter = 3
+Write-Host "Counting down from 3:"
+while ($counter -ge 1) {
+    Write-Host $counter
+    $counter--
+}
 
-# Loops
-echo "Counting to 5 using a for loop:"
-for i in {1..5}; do
-  echo $i
-done
-
-# Practical Exercises
-echo "Executing a command using backticks:"
-current_directory=`pwd`
-echo "Current directory: $current_directory"
-
-# Next Steps
-echo "Congratulations on completing the Introduction to Shell Scripting module!"
-echo "Feel free to explore more advanced concepts in the upcoming sections."
+# Do-While Loop
+$index = 1
+Write-Host "Using Do-While Loop:"
+do {
+    Write-Host "Index: $index"
+    $index++
+} while ($index -le 3)
